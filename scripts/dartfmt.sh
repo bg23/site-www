@@ -13,6 +13,14 @@ EXAMPLES=examples
 # except for the lib/pi_*.* files
 $DARTFMT -w $EXAMPLES/lib/[^p] $EXAMPLES/test
 
+$DARTFMT -l 65 \
+  examples/lib/language_tour/exceptions.dart \
+  examples/test/library_tour/core_test.dart \
+  examples/lib/library_tour/async/future.dart \
+  examples/lib/library_tour/async/stream.dart \
+  examples/test/library_tour/io_test.dart \
+  examples/test/library_tour/mirrors_test.dart
+
 $DARTFMT -l 60 \
   examples/lib/language_tour/classes/immutable_point.dart \
   examples/lib/language_tour/classes/logger.dart \
@@ -21,15 +29,8 @@ $DARTFMT -l 60 \
   examples/test/language_tour/built_in_types_test.dart \
   examples/test/language_tour/functions_test.dart \
   examples/lib/library_tour/core \
-  examples/test/library_tour/html_test.dart
-
-$DARTFMT -l 65 \
-  examples/lib/language_tour/exceptions.dart \
-  examples/test/library_tour/core_test.dart \
-  examples/lib/library_tour/async/future.dart \
-  examples/lib/library_tour/async/stream.dart \
-  examples/test/library_tour/io_test.dart \
-  examples/test/library_tour/mirrors_test.dart
+  examples/test/library_tour/html_test.dart \
+  examples/lib/samples/spacecraft.dart
 
 # If any files were changed, then exit 1:
 REFORMATTED_FILES=$(git status --short)
